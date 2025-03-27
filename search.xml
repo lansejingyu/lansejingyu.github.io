@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Hello World 🌟</title>
-      <link href="/Hello-World/"/>
-      <url>/Hello-World/</url>
-      
-        <content type="html"><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 --><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#%E5%89%8D%E8%A8%80">1</a></li><li><a href="#%E5%89%8D%E8%A8%802">2</a></li><li><a href="#%E5%89%8D%E8%A8%803">3</a></li></ul><!-- 使用html语法增加跳转链接,可以在文章页形成目录 --><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p><h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p><h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p><p>当初写博客的初衷有两个：</p><p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p><p>运营和维护博客需要多少时间和金钱？</p><p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p><p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p><p>欢迎关注我的博客，期待与你一起探索编程的世界！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") --><p><img src="https://img.wangwango.me/file/1737427338662_utf-8b2c8e2fb5adaed5d5c0ab4bce9af69e6b13f9ef3.jpeg" alt="这是金克斯角色" title="金克斯"></p><!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。--><p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p><!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 --><img src="https://img.wangwango.me/file/1737427338662_utf-8b2c8e2fb5adaed5d5c0ab4bce9af69e6b13f9ef3.jpeg" alt="这是金克斯角色" title="金克斯" class="no-lightbox"><!-- 添加跳转链接 --><p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Hello World 🌟</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 -->
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%89%8D%E8%A8%80">1</a></li>
+<li><a href="#%E5%89%8D%E8%A8%802">2</a></li>
+<li><a href="#%E5%89%8D%E8%A8%803">3</a></li>
+</ul>
+<!-- 使用html语法增加跳转链接,可以在文章页形成目录 -->
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p>
+<h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p>
+<h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p>
+<p>当初写博客的初衷有两个：</p>
+<p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p>
+<p>运营和维护博客需要多少时间和金钱？</p>
+<p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p>
+<p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p>
+<p>欢迎关注我的博客，期待与你一起探索编程的世界！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") -->
+<p><img src="https://img.wangwango.me/file/1737427338662_utf-8b2c8e2fb5adaed5d5c0ab4bce9af69e6b13f9ef3.jpeg" alt="这是金克斯角色" title="金克斯"></p>
+<!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。-->
+<p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p>
+<!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 -->
+<img src="https://img.wangwango.me/file/1737427338662_utf-8b2c8e2fb5adaed5d5c0ab4bce9af69e6b13f9ef3.jpeg" alt="这是金克斯角色" title="金克斯" class="no-lightbox">
+
+<!-- 添加跳转链接 -->
+<p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>
+]]></content>
       <categories>
-          
-          <category> Hexo博客搭建 </category>
-          
+        <category>Hexo博客搭建</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
