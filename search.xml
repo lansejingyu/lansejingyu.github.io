@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
+    <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>壁纸</tag>
+        <tag>Bing</tag>
+        <tag>教程</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World 🌟</title>
     <url>/Hello-World/</url>
     <content><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 -->
@@ -37,22 +51,8 @@
         <category>博客</category>
       </categories>
       <tags>
+        <tag>博客</tag>
         <tag>Hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
-    <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>壁纸</tag>
-        <tag>Bing</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
 </search>
