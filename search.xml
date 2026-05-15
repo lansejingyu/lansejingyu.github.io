@@ -1,65 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
-      <link href="/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/"/>
-      <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
+    <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
+    <content><![CDATA[]]></content>
       <categories>
-          
-          <category> 教程 </category>
-          
+        <category>教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 壁纸 </tag>
-            
-            <tag> Bing </tag>
-            
-            <tag> 教程 </tag>
-            
-            <tag> 博客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World 🌟</title>
-      <link href="/Hello-World/"/>
-      <url>/Hello-World/</url>
-      
-        <content type="html"><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 --><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#%E5%89%8D%E8%A8%80">1</a></li><li><a href="#%E5%89%8D%E8%A8%802">2</a></li><li><a href="#%E5%89%8D%E8%A8%803">3</a></li></ul><!-- 使用html语法增加跳转链接,可以在文章页形成目录 --><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p><h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p><h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p><p>当初写博客的初衷有两个：</p><p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p><p>运营和维护博客需要多少时间和金钱？</p><p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p><p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p><p>欢迎关注我的博客，期待与你一起探索编程的世界！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") --><p><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯"></p><!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。--><p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p><!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 --><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯" class="no-lightbox"><!-- 添加跳转链接 --><p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>]]></content>
-      
-      
+      <tags>
+        <tag>壁纸</tag>
+        <tag>Bing</tag>
+        <tag>教程</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World 🌟</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 -->
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%89%8D%E8%A8%80">1</a></li>
+<li><a href="#%E5%89%8D%E8%A8%802">2</a></li>
+<li><a href="#%E5%89%8D%E8%A8%803">3</a></li>
+</ul>
+<!-- 使用html语法增加跳转链接,可以在文章页形成目录 -->
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p>
+<h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p>
+<h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p>
+<p>当初写博客的初衷有两个：</p>
+<p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p>
+<p>运营和维护博客需要多少时间和金钱？</p>
+<p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p>
+<p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p>
+<p>欢迎关注我的博客，期待与你一起探索编程的世界！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") -->
+<p><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯"></p>
+<!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。-->
+<p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p>
+<!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 -->
+<img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯" class="no-lightbox">
+
+<!-- 添加跳转链接 -->
+<p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>
+]]></content>
       <categories>
-          
-          <category> 博客 </category>
-          
+        <category>博客</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客 </tag>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Claude Code使用指南</title>
+    <url>/Claude-Code%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="什么是-Claude-Code？"><a href="#什么是-Claude-Code？" class="headerlink" title="什么是 Claude Code？"></a>什么是 Claude Code？</h2><p>Claude Code 是 Anthropic 推出的 AI 编程助手，它不仅仅是一个代码补全工具，而是一个能够理解项目上下文、执行复杂任务的智能开发伙伴。Claude Code 可以通过 CLI（命令行）、桌面应用、Web 应用（claude.ai&#x2F;code）以及 IDE 扩展（VS Code、JetBrains）等多种方式使用。</p>
+<span id="more"></span>
+
+<h2 id="核心特点"><a href="#核心特点" class="headerlink" title="核心特点"></a>核心特点</h2><h3 id="1-强大的上下文理解能力"><a href="#1-强大的上下文理解能力" class="headerlink" title="1. 强大的上下文理解能力"></a>1. 强大的上下文理解能力</h3><p>Claude Code 基于 Claude Opus 4.7 模型，拥有 100 万 token 的上下文窗口，能够理解整个项目的代码结构和业务逻辑。</p>
+<h3 id="2-主动执行能力"><a href="#2-主动执行能力" class="headerlink" title="2. 主动执行能力"></a>2. 主动执行能力</h3><p>不同于传统的代码助手只提供建议，Claude Code 可以：</p>
+<ul>
+<li>直接读写文件</li>
+<li>执行终端命令</li>
+<li>运行测试和构建</li>
+<li>部署代码</li>
+<li>创建 Git 提交和 PR</li>
+</ul>
+<h3 id="3-智能工具调用"><a href="#3-智能工具调用" class="headerlink" title="3. 智能工具调用"></a>3. 智能工具调用</h3><p>Claude Code 内置了多种专用工具：</p>
+<ul>
+<li><strong>Read&#x2F;Write&#x2F;Edit</strong>：文件操作</li>
+<li><strong>Bash</strong>：执行命令</li>
+<li><strong>Glob&#x2F;Grep</strong>：代码搜索</li>
+<li><strong>Agent</strong>：委派子任务给专门的代理</li>
+<li><strong>WebSearch&#x2F;WebFetch</strong>：获取最新信息</li>
+</ul>
+<h2 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h2><h3 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过 npm 安装（CLI 版本）</span></span><br><span class="line">npm install -g @anthropic-ai/claude-code</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 Claude Code</span></span><br><span class="line">claude</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用交互方式"><a href="#常用交互方式" class="headerlink" title="常用交互方式"></a>常用交互方式</h3><h4 id="1-直接对话"><a href="#1-直接对话" class="headerlink" title="1. 直接对话"></a>1. 直接对话</h4><p>直接描述你想做什么，Claude Code 会理解并执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：帮我创建一个新的 React 组件 UserProfile</span><br><span class="line">Claude：[创建文件、编写代码、添加样式]</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用斜杠命令"><a href="#2-使用斜杠命令" class="headerlink" title="2. 使用斜杠命令"></a>2. 使用斜杠命令</h4><p>Claude Code 支持多种快捷命令：</p>
+<ul>
+<li><code>/help</code> - 获取帮助</li>
+<li><code>/clear</code> - 清空对话历史</li>
+<li><code>/config</code> - 配置设置</li>
+<li><code>/init</code> - 初始化 CLAUDE.md 项目文档</li>
+</ul>
+<h4 id="3-文件引用"><a href="#3-文件引用" class="headerlink" title="3. 文件引用"></a>3. 文件引用</h4><p>使用 <code>@</code> 符号引用文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：@src/utils.ts 这个文件中的日期格式化函数有 bug</span><br><span class="line">Claude：[读取文件、分析问题、修复代码]</span><br></pre></td></tr></table></figure>
+
+<h2 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h2><h3 id="1-项目文档（CLAUDE-md）"><a href="#1-项目文档（CLAUDE-md）" class="headerlink" title="1. 项目文档（CLAUDE.md）"></a>1. 项目文档（CLAUDE.md）</h3><p>在项目根目录创建 <code>CLAUDE.md</code> 文件，记录：</p>
+<ul>
+<li>项目架构说明</li>
+<li>常用命令</li>
+<li>开发规范</li>
+<li>部署流程</li>
+</ul>
+<p>Claude Code 会自动读取这个文件，更好地理解你的项目。</p>
+<h3 id="2-任务规划模式"><a href="#2-任务规划模式" class="headerlink" title="2. 任务规划模式"></a>2. 任务规划模式</h3><p>对于复杂任务，Claude Code 会进入规划模式：</p>
+<ol>
+<li>分析需求</li>
+<li>制定实施计划</li>
+<li>征求你的确认</li>
+<li>执行实施</li>
+</ol>
+<h3 id="3-并行执行"><a href="#3-并行执行" class="headerlink" title="3. 并行执行"></a>3. 并行执行</h3><p>Claude Code 可以同时执行多个独立任务，提高效率。</p>
+<h3 id="4-上下文管理"><a href="#4-上下文管理" class="headerlink" title="4. 上下文管理"></a>4. 上下文管理</h3><p>当对话过长时，Claude Code 会自动压缩历史上下文，保留关键信息，让你可以持续工作而不受上下文窗口限制。</p>
+<h2 id="实际应用案例"><a href="#实际应用案例" class="headerlink" title="实际应用案例"></a>实际应用案例</h2><h3 id="案例-1：创建-Hexo-博客文章"><a href="#案例-1：创建-Hexo-博客文章" class="headerlink" title="案例 1：创建 Hexo 博客文章"></a>案例 1：创建 Hexo 博客文章</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：帮我创建一篇关于 Python 装饰器的博客文章</span><br><span class="line">Claude：</span><br><span class="line">1. 执行 hexo new &quot;Python装饰器详解&quot;</span><br><span class="line">2. 填充文章内容</span><br><span class="line">3. 添加代码示例</span><br><span class="line">4. 设置标签和分类</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例-2：修复-Bug"><a href="#案例-2：修复-Bug" class="headerlink" title="案例 2：修复 Bug"></a>案例 2：修复 Bug</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：登录功能有问题，用户点击登录按钮没反应</span><br><span class="line">Claude：</span><br><span class="line">1. 搜索登录相关代码</span><br><span class="line">2. 检查事件绑定</span><br><span class="line">3. 查看控制台错误</span><br><span class="line">4. 定位问题并修复</span><br><span class="line">5. 运行测试验证</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例-3：重构代码"><a href="#案例-3：重构代码" class="headerlink" title="案例 3：重构代码"></a>案例 3：重构代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：把这个组件拆分成更小的子组件</span><br><span class="line">Claude：</span><br><span class="line">1. 分析当前组件结构</span><br><span class="line">2. 制定拆分方案</span><br><span class="line">3. 创建新的子组件文件</span><br><span class="line">4. 重构主组件</span><br><span class="line">5. 更新导入和导出</span><br><span class="line">6. 运行测试确保功能正常</span><br></pre></td></tr></table></figure>
+
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><h3 id="1-明确描述需求"><a href="#1-明确描述需求" class="headerlink" title="1. 明确描述需求"></a>1. 明确描述需求</h3><p>越具体的描述，Claude Code 越能准确理解你的意图。</p>
+<p><strong>不好的例子</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">修改一下这个文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>好的例子</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">把 UserList 组件中的表格改成卡片布局，每行显示 3 个卡片</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-善用项目文档"><a href="#2-善用项目文档" class="headerlink" title="2. 善用项目文档"></a>2. 善用项目文档</h3><p>维护好 <code>CLAUDE.md</code>，让 Claude Code 了解：</p>
+<ul>
+<li>项目使用的技术栈</li>
+<li>代码规范和风格</li>
+<li>测试和部署流程</li>
+</ul>
+<h3 id="3-分步骤处理复杂任务"><a href="#3-分步骤处理复杂任务" class="headerlink" title="3. 分步骤处理复杂任务"></a>3. 分步骤处理复杂任务</h3><p>对于大型任务，可以分解成多个小步骤，逐步完成。</p>
+<h3 id="4-验证结果"><a href="#4-验证结果" class="headerlink" title="4. 验证结果"></a>4. 验证结果</h3><p>Claude Code 执行完任务后，建议：</p>
+<ul>
+<li>查看代码变更</li>
+<li>运行测试</li>
+<li>本地验证功能</li>
+</ul>
+<h2 id="安全性考虑"><a href="#安全性考虑" class="headerlink" title="安全性考虑"></a>安全性考虑</h2><p>Claude Code 在执行高风险操作前会征求确认：</p>
+<ul>
+<li>删除文件</li>
+<li>强制推送代码</li>
+<li>修改生产环境配置</li>
+<li>执行破坏性命令</li>
+</ul>
+<p>你可以通过权限设置控制 Claude Code 的操作范围。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Claude Code 是一个强大的 AI 编程助手，它能够：</p>
+<ul>
+<li>✅ 理解复杂的项目上下文</li>
+<li>✅ 主动执行开发任务</li>
+<li>✅ 处理从编码到部署的完整流程</li>
+<li>✅ 持续学习你的项目和偏好</li>
+</ul>
+<p>合理使用 Claude Code，可以显著提升开发效率，让你专注于架构设计和业务逻辑，而把重复性的编码工作交给 AI 处理。</p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li>官方网站：<a href="https://claude.ai/code">https://claude.ai/code</a></li>
+<li>文档：<a href="https://docs.anthropic.com/claude-code">https://docs.anthropic.com/claude-code</a></li>
+<li>GitHub：<a href="https://github.com/anthropics/claude-code">https://github.com/anthropics/claude-code</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>开发工具</tag>
+        <tag>Claude</tag>
+      </tags>
+  </entry>
 </search>
