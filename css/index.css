@@ -6124,9 +6124,8 @@ mjx-assistive-mml {
   filter: none;
 }
 @media screen and (max-width: 768px) {
-  .fancybox__toolbar__column.is-middle,
-  .f-carousel__toolbar__column.is-middle {
-    visibility: hidden;
+  .fancybox__toolbar__column.is-middle {
+    display: none;
   }
 }
 .container .btn-center {
