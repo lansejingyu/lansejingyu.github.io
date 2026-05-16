@@ -1,98 +1,597 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Claude Code使用指南</title>
-      <link href="/Claude-Code%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-      <url>/Claude-Code%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-      
-        <content type="html"><![CDATA[<h2 id="什么是-Claude-Code？"><a href="#什么是-Claude-Code？" class="headerlink" title="什么是 Claude Code？"></a>什么是 Claude Code？</h2><p>Claude Code 是 Anthropic 推出的 AI 编程助手，它不仅仅是一个代码补全工具，而是一个能够理解项目上下文、执行复杂任务的智能开发伙伴。Claude Code 可以通过 CLI（命令行）、桌面应用、Web 应用（claude.ai&#x2F;code）以及 IDE 扩展（VS Code、JetBrains）等多种方式使用。</p><span id="more"></span><h2 id="核心特点"><a href="#核心特点" class="headerlink" title="核心特点"></a>核心特点</h2><h3 id="1-强大的上下文理解能力"><a href="#1-强大的上下文理解能力" class="headerlink" title="1. 强大的上下文理解能力"></a>1. 强大的上下文理解能力</h3><p>Claude Code 基于 Claude Opus 4.7 模型，拥有 100 万 token 的上下文窗口，能够理解整个项目的代码结构和业务逻辑。</p><h3 id="2-主动执行能力"><a href="#2-主动执行能力" class="headerlink" title="2. 主动执行能力"></a>2. 主动执行能力</h3><p>不同于传统的代码助手只提供建议，Claude Code 可以：</p><ul><li>直接读写文件</li><li>执行终端命令</li><li>运行测试和构建</li><li>部署代码</li><li>创建 Git 提交和 PR</li></ul><h3 id="3-智能工具调用"><a href="#3-智能工具调用" class="headerlink" title="3. 智能工具调用"></a>3. 智能工具调用</h3><p>Claude Code 内置了多种专用工具：</p><ul><li><strong>Read&#x2F;Write&#x2F;Edit</strong>：文件操作</li><li><strong>Bash</strong>：执行命令</li><li><strong>Glob&#x2F;Grep</strong>：代码搜索</li><li><strong>Agent</strong>：委派子任务给专门的代理</li><li><strong>WebSearch&#x2F;WebFetch</strong>：获取最新信息</li></ul><h2 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h2><h3 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过 npm 安装（CLI 版本）</span></span><br><span class="line">npm install -g @anthropic-ai/claude-code</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 Claude Code</span></span><br><span class="line">claude</span><br></pre></td></tr></table></figure><h3 id="常用交互方式"><a href="#常用交互方式" class="headerlink" title="常用交互方式"></a>常用交互方式</h3><h4 id="1-直接对话"><a href="#1-直接对话" class="headerlink" title="1. 直接对话"></a>1. 直接对话</h4><p>直接描述你想做什么，Claude Code 会理解并执行：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">你：帮我创建一个新的 React 组件 UserProfile</span><br><span class="line">Claude：[创建文件、编写代码、添加样式]</span><br></pre></td></tr></table></figure><h4 id="2-使用斜杠命令"><a href="#2-使用斜杠命令" class="headerlink" title="2. 使用斜杠命令"></a>2. 使用斜杠命令</h4><p>Claude Code 支持多种快捷命令：</p><ul><li><code>/help</code> - 获取帮助</li><li><code>/clear</code> - 清空对话历史</li><li><code>/config</code> - 配置设置</li><li><code>/init</code> - 初始化 CLAUDE.md 项目文档</li></ul><h4 id="3-文件引用"><a href="#3-文件引用" class="headerlink" title="3. 文件引用"></a>3. 文件引用</h4><p>使用 <code>@</code> 符号引用文件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">你：@src/utils.ts 这个文件中的日期格式化函数有 bug</span><br><span class="line">Claude：[读取文件、分析问题、修复代码]</span><br></pre></td></tr></table></figure><h2 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h2><h3 id="1-项目文档（CLAUDE-md）"><a href="#1-项目文档（CLAUDE-md）" class="headerlink" title="1. 项目文档（CLAUDE.md）"></a>1. 项目文档（CLAUDE.md）</h3><p>在项目根目录创建 <code>CLAUDE.md</code> 文件，记录：</p><ul><li>项目架构说明</li><li>常用命令</li><li>开发规范</li><li>部署流程</li></ul><p>Claude Code 会自动读取这个文件，更好地理解你的项目。</p><h3 id="2-任务规划模式"><a href="#2-任务规划模式" class="headerlink" title="2. 任务规划模式"></a>2. 任务规划模式</h3><p>对于复杂任务，Claude Code 会进入规划模式：</p><ol><li>分析需求</li><li>制定实施计划</li><li>征求你的确认</li><li>执行实施</li></ol><h3 id="3-并行执行"><a href="#3-并行执行" class="headerlink" title="3. 并行执行"></a>3. 并行执行</h3><p>Claude Code 可以同时执行多个独立任务，提高效率。</p><h3 id="4-上下文管理"><a href="#4-上下文管理" class="headerlink" title="4. 上下文管理"></a>4. 上下文管理</h3><p>当对话过长时，Claude Code 会自动压缩历史上下文，保留关键信息，让你可以持续工作而不受上下文窗口限制。</p><h2 id="实际应用案例"><a href="#实际应用案例" class="headerlink" title="实际应用案例"></a>实际应用案例</h2><h3 id="案例-1：创建-Hexo-博客文章"><a href="#案例-1：创建-Hexo-博客文章" class="headerlink" title="案例 1：创建 Hexo 博客文章"></a>案例 1：创建 Hexo 博客文章</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">你：帮我创建一篇关于 Python 装饰器的博客文章</span><br><span class="line">Claude：</span><br><span class="line">1. 执行 hexo new &quot;Python装饰器详解&quot;</span><br><span class="line">2. 填充文章内容</span><br><span class="line">3. 添加代码示例</span><br><span class="line">4. 设置标签和分类</span><br></pre></td></tr></table></figure><h3 id="案例-2：修复-Bug"><a href="#案例-2：修复-Bug" class="headerlink" title="案例 2：修复 Bug"></a>案例 2：修复 Bug</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">你：登录功能有问题，用户点击登录按钮没反应</span><br><span class="line">Claude：</span><br><span class="line">1. 搜索登录相关代码</span><br><span class="line">2. 检查事件绑定</span><br><span class="line">3. 查看控制台错误</span><br><span class="line">4. 定位问题并修复</span><br><span class="line">5. 运行测试验证</span><br></pre></td></tr></table></figure><h3 id="案例-3：重构代码"><a href="#案例-3：重构代码" class="headerlink" title="案例 3：重构代码"></a>案例 3：重构代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">你：把这个组件拆分成更小的子组件</span><br><span class="line">Claude：</span><br><span class="line">1. 分析当前组件结构</span><br><span class="line">2. 制定拆分方案</span><br><span class="line">3. 创建新的子组件文件</span><br><span class="line">4. 重构主组件</span><br><span class="line">5. 更新导入和导出</span><br><span class="line">6. 运行测试确保功能正常</span><br></pre></td></tr></table></figure><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><h3 id="1-明确描述需求"><a href="#1-明确描述需求" class="headerlink" title="1. 明确描述需求"></a>1. 明确描述需求</h3><p>越具体的描述，Claude Code 越能准确理解你的意图。</p><p><strong>不好的例子</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改一下这个文件</span><br></pre></td></tr></table></figure><p><strong>好的例子</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把 UserList 组件中的表格改成卡片布局，每行显示 3 个卡片</span><br></pre></td></tr></table></figure><h3 id="2-善用项目文档"><a href="#2-善用项目文档" class="headerlink" title="2. 善用项目文档"></a>2. 善用项目文档</h3><p>维护好 <code>CLAUDE.md</code>，让 Claude Code 了解：</p><ul><li>项目使用的技术栈</li><li>代码规范和风格</li><li>测试和部署流程</li></ul><h3 id="3-分步骤处理复杂任务"><a href="#3-分步骤处理复杂任务" class="headerlink" title="3. 分步骤处理复杂任务"></a>3. 分步骤处理复杂任务</h3><p>对于大型任务，可以分解成多个小步骤，逐步完成。</p><h3 id="4-验证结果"><a href="#4-验证结果" class="headerlink" title="4. 验证结果"></a>4. 验证结果</h3><p>Claude Code 执行完任务后，建议：</p><ul><li>查看代码变更</li><li>运行测试</li><li>本地验证功能</li></ul><h2 id="安全性考虑"><a href="#安全性考虑" class="headerlink" title="安全性考虑"></a>安全性考虑</h2><p>Claude Code 在执行高风险操作前会征求确认：</p><ul><li>删除文件</li><li>强制推送代码</li><li>修改生产环境配置</li><li>执行破坏性命令</li></ul><p>你可以通过权限设置控制 Claude Code 的操作范围。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Claude Code 是一个强大的 AI 编程助手，它能够：</p><ul><li>✅ 理解复杂的项目上下文</li><li>✅ 主动执行开发任务</li><li>✅ 处理从编码到部署的完整流程</li><li>✅ 持续学习你的项目和偏好</li></ul><p>合理使用 Claude Code，可以显著提升开发效率，让你专注于架构设计和业务逻辑，而把重复性的编码工作交给 AI 处理。</p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul><li>官方网站：<a href="https://claude.ai/code">https://claude.ai/code</a></li><li>文档：<a href="https://docs.anthropic.com/claude-code">https://docs.anthropic.com/claude-code</a></li><li>GitHub：<a href="https://github.com/anthropics/claude-code">https://github.com/anthropics/claude-code</a></li></ul>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
+    <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Bing 搜索引擎每天都会更新一张精美的高清壁纸，这些壁纸质量极高，涵盖自然风光、人文景观、动物植物等各种主题。作为一个博客爱好者，我想把这些壁纸自动收集起来，展示在博客的图库中。</p>
+<p>本文将详细介绍如何实现一个<strong>完全自动化、零成本、高性能</strong>的 Bing 壁纸获取与展示系统。</p>
+<span id="more"></span>
+
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><ul>
+<li>✅ 每天自动获取 Bing 4K 超高清壁纸（3840x2160）</li>
+<li>✅ 自动保存到 GitHub 仓库</li>
+<li>✅ 通过 CDN 加速访问</li>
+<li>✅ 在博客图库中实时展示</li>
+<li>✅ 鼠标悬停显示壁纸日期和版权信息</li>
+<li>✅ 完全免费，无需服务器</li>
+</ul>
+<p><strong>在线预览</strong>：<a href="/tuku/Bing">博客图库 - Bing Wallpaper 4K</a></p>
+<h2 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h2><p>这是一个<strong>自动化获取 + 远程托管 + 博客展示</strong>的三层架构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GitHub Actions (定时任务)</span><br><span class="line">    ↓ 每天自动运行</span><br><span class="line">Python 脚本获取壁纸</span><br><span class="line">    ↓ 保存到 JSON</span><br><span class="line">GitHub 仓库托管数据</span><br><span class="line">    ↓ 通过 CDN 加速</span><br><span class="line">Hexo 博客图库展示</span><br></pre></td></tr></table></figure>
+
+<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ul>
+<li><strong>Python</strong> - 爬虫脚本</li>
+<li><strong>GitHub Actions</strong> - 定时任务</li>
+<li><strong>GitHub Repository</strong> - 数据存储</li>
+<li><strong>jsDelivr CDN</strong> - 全球加速</li>
+<li><strong>Hexo + Butterfly 主题</strong> - 博客展示</li>
+</ul>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="第一步：创建独立的壁纸仓库"><a href="#第一步：创建独立的壁纸仓库" class="headerlink" title="第一步：创建独立的壁纸仓库"></a>第一步：创建独立的壁纸仓库</h3><p>首先在 GitHub 创建一个独立的仓库来存储壁纸数据。</p>
+<p><strong>仓库地址</strong>：<a href="https://github.com/lansejingyu/Bing-Wallpaper">https://github.com/lansejingyu/Bing-Wallpaper</a></p>
+<p><strong>目录结构</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Bing-Wallpaper/</span><br><span class="line">├── main.py                          # Python 爬虫脚本</span><br><span class="line">├── requirements.txt                 # 依赖包</span><br><span class="line">├── Bing_Wallpaper_url.json         # 壁纸数据存储</span><br><span class="line">├── .github/</span><br><span class="line">│   └── workflows/</span><br><span class="line">│       └── scheduled_job.yml       # GitHub Actions 定时任务</span><br><span class="line">└── README.md                        # 说明文档</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么要独立仓库？</strong></p>
+<ul>
+<li>数据与博客分离，便于维护</li>
+<li>可以在多个项目中复用数据</li>
+<li>减小博客仓库体积</li>
+</ul>
+<h3 id="第二步：了解-Bing-壁纸-API"><a href="#第二步：了解-Bing-壁纸-API" class="headerlink" title="第二步：了解 Bing 壁纸 API"></a>第二步：了解 Bing 壁纸 API</h3><p>Bing 提供了官方的壁纸 API，可以获取每日壁纸信息。</p>
+<h4 id="API-接口"><a href="#API-接口" class="headerlink" title="API 接口"></a>API 接口</h4><p><strong>1. 标准分辨率（1920x1080）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;mkt=zh-CN</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 4K 超高清（3840x2160）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;nc=1614319565639&amp;pid=hp&amp;FORM=BEHPTB&amp;uhd=1&amp;uhdwidth=3840&amp;uhdheight=2160</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">format</td>
+<td align="center">返回数据格式：js (JSON) &#x2F; xml (XML)</td>
+</tr>
+<tr>
+<td align="center">idx</td>
+<td align="center">返回第几天的图片：0-今天，1-昨天，2-前天</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="center">返回数量</td>
+</tr>
+<tr>
+<td align="center">mkt</td>
+<td align="center">地区：zh-CN (中国)</td>
+</tr>
+<tr>
+<td align="center">uhd</td>
+<td align="center">是否返回超高清</td>
+</tr>
+<tr>
+<td align="center">uhdwidth</td>
+<td align="center">超高清宽度</td>
+</tr>
+<tr>
+<td align="center">uhdheight</td>
+<td align="center">超高清高度</td>
+</tr>
+</tbody></table>
+<h4 id="获取-4K-原图直链"><a href="#获取-4K-原图直链" class="headerlink" title="获取 4K 原图直链"></a>获取 4K 原图直链</h4><p>API 返回的 JSON 中包含 <code>urlbase</code> 字段，拼接后即可得到 4K 原图：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cn.bing.com + urlbase + _UHD.jpg</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cn.bing.com/th?id=OHR.UtahBadlands_ZH-CN9174002963_UHD.jpg</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步：编写-Python-爬虫脚本"><a href="#第三步：编写-Python-爬虫脚本" class="headerlink" title="第三步：编写 Python 爬虫脚本"></a>第三步：编写 Python 爬虫脚本</h3><p>创建 <code>main.py</code> 文件，实现壁纸获取和保存功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_bing_wallpaper</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取 Bing 每日壁纸&quot;&quot;&quot;</span></span><br><span class="line">    url = <span class="string">&quot;https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;nc=1614319565639&amp;pid=hp&amp;FORM=BEHPTB&amp;uhd=1&amp;uhdwidth=3840&amp;uhdheight=2160&quot;</span></span><br><span class="line">    </span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Cookie&#x27;</span>: <span class="string">&#x27;MUID=3215B205599A658F1EB3A7C4584364E7; SRCHD=AF=NOFORM; SRCHHPGUSR=SRCHLANG=zh-Hans&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 发送 HTTP 请求</span></span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        response.raise_for_status()  <span class="comment"># 检查 HTTP 状态码</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 解析 JSON 数据</span></span><br><span class="line">        data = json.loads(response.text)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 URL</span></span><br><span class="line">        image_url_base = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;urlbase&quot;</span>]</span><br><span class="line">        image_url = <span class="string">f&quot;https://cn.bing.com<span class="subst">&#123;image_url_base&#125;</span>_UHD.jpg&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 alt</span></span><br><span class="line">        alt = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;urlbase&quot;</span>] + <span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 title（拼接时间+地址）</span></span><br><span class="line">        title_time = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;title&quot;</span>] + <span class="string">&#x27;_&#x27;</span> + data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;enddate&quot;</span>] + <span class="string">&#x27;_&#x27;</span> + data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;copyright&quot;</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;成功获取 4K Bing 壁纸 URL:&quot;</span>, image_url)</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&quot;url&quot;</span>: image_url,</span><br><span class="line">            <span class="string">&quot;alt&quot;</span>: alt,</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: title_time</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;请求失败:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> json.JSONDecodeError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;JSON 解析失败:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> KeyError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;JSON 数据格式异常:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;未知错误:&quot;</span>, e)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_to_json</span>(<span class="params">new_data</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;保存壁纸数据到 JSON 文件&quot;&quot;&quot;</span></span><br><span class="line">    json_file = <span class="string">&#x27;Bing_Wallpaper_url.json&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 如果文件不存在，创建初始结构</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(json_file):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            json.dump([], f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">4</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 读取现有数据</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            existing_data = json.load(f)</span><br><span class="line">    <span class="keyword">except</span> (json.JSONDecodeError, FileNotFoundError):</span><br><span class="line">        existing_data = []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 添加新数据到开头（最新的在最前面）</span></span><br><span class="line">    existing_data.insert(<span class="number">0</span>, new_data)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 写回文件</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        json.dump(existing_data, f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">4</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;数据已添加到 <span class="subst">&#123;json_file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    wallpaper_data = get_bing_wallpaper()</span><br><span class="line">    <span class="keyword">if</span> wallpaper_data:</span><br><span class="line">        save_to_json(wallpaper_data)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;最新壁纸数据已更新:&quot;</span>, wallpaper_data)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取壁纸失败&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码说明"><a href="#代码说明" class="headerlink" title="代码说明"></a>代码说明</h4><ol>
+<li><p><strong><code>get_bing_wallpaper()</code></strong> - 获取壁纸信息</p>
+<ul>
+<li>调用 Bing API</li>
+<li>解析 JSON 数据</li>
+<li>拼接 4K 图片 URL</li>
+<li>组合标题信息（标题 + 日期 + 版权）</li>
+</ul>
+</li>
+<li><p><strong><code>save_to_json()</code></strong> - 保存到 JSON 文件</p>
+<ul>
+<li>读取现有数据</li>
+<li>将新数据插入到数组开头（保证最新的在前面）</li>
+<li>写回文件</li>
+</ul>
+</li>
+<li><p><strong>数据格式</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://cn.bing.com/th?id=OHR.SaguaroRainbow_ZH-CN0139056375_UHD.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;alt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/th?id=OHR.SaguaroRainbow_ZH-CN0139056375.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;天空无极限_20250403_沃森峰上空的彩虹, 巨人柱国家公园, 亚利桑那州, 美国 (© Frank Staub/Getty Images)&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="创建依赖文件"><a href="#创建依赖文件" class="headerlink" title="创建依赖文件"></a>创建依赖文件</h4><p><code>requirements.txt</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">requests</span><br></pre></td></tr></table></figure>
+
+<h3 id="第四步：配置-GitHub-Actions-自动化"><a href="#第四步：配置-GitHub-Actions-自动化" class="headerlink" title="第四步：配置 GitHub Actions 自动化"></a>第四步：配置 GitHub Actions 自动化</h3><p>创建 <code>.github/workflows/scheduled_job.yml</code> 文件，实现每天自动运行。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Scheduled</span> <span class="string">Python</span> <span class="string">Job</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 0 * * *&#x27;</span>  <span class="comment"># 每天 UTC 0点（北京时间 8:00）</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span>      <span class="comment"># 支持手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">execute-script:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># 步骤1：拉取仓库代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">Code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤2：设置 Python 环境</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Python</span> <span class="number">3.10</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-python@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">python-version:</span> <span class="string">&quot;3.10&quot;</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤3：安装依赖</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          pip install -r requirements.txt</span></span><br><span class="line"><span class="string"></span>      </span><br><span class="line">      <span class="comment"># 步骤4：运行 Python 脚本</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Script</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">python</span> <span class="string">-u</span> <span class="string">main.py</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤5：提交更新的文件</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Commit</span> <span class="string">and</span> <span class="string">Push</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          git config --global user.name &quot;GitHub Actions&quot;</span></span><br><span class="line"><span class="string">          git config --global user.email &quot;actions@github.com&quot;</span></span><br><span class="line"><span class="string">          git add Bing_Wallpaper_url.json</span></span><br><span class="line"><span class="string">          git commit -m &quot;Update Bing wallpapers&quot; || echo &quot;No changes to commit&quot;</span></span><br><span class="line"><span class="string">          git push</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h4><ol>
+<li><p><strong>触发条件</strong></p>
+<ul>
+<li><code>schedule: cron: &#39;0 0 * * *&#39;</code> - 每天 UTC 0点（北京时间 8:00）自动运行</li>
+<li><code>workflow_dispatch</code> - 支持在 GitHub 页面手动触发</li>
+</ul>
+</li>
+<li><p><strong>运行环境</strong></p>
+<ul>
+<li><code>ubuntu-latest</code> - 使用最新的 Ubuntu 系统</li>
+</ul>
+</li>
+<li><p><strong>执行步骤</strong></p>
+<ul>
+<li>拉取代码</li>
+<li>安装 Python 3.10</li>
+<li>安装依赖包</li>
+<li>运行爬虫脚本</li>
+<li>提交更新的 JSON 文件</li>
+</ul>
+</li>
+<li><p><strong>权限设置</strong></p>
+<ul>
+<li>需要在仓库设置中允许 GitHub Actions 写入权限</li>
+<li>Settings → Actions → General → Workflow permissions → Read and write permissions</li>
+</ul>
+</li>
+</ol>
+<h3 id="第五步：在-Hexo-博客中集成"><a href="#第五步：在-Hexo-博客中集成" class="headerlink" title="第五步：在 Hexo 博客中集成"></a>第五步：在 Hexo 博客中集成</h3><h4 id="5-1-创建图库主页"><a href="#5-1-创建图库主页" class="headerlink" title="5.1 创建图库主页"></a>5.1 创建图库主页</h4><p>创建 <code>source/tuku/index.md</code> 文件：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 图库</span><br><span class="line"><span class="section">date: 2025-03-29 00:30:07</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;Bing Wallpaper 4K&#x27; &#x27;Bing 4k超高清UHD原图-每日更新&#x27; &#x27;/tuku/Bing&#x27; https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2-创建-Bing-壁纸子页面"><a href="#5-2-创建-Bing-壁纸子页面" class="headerlink" title="5.2 创建 Bing 壁纸子页面"></a>5.2 创建 Bing 壁纸子页面</h4><p>创建 <code>source/tuku/Bing/index.md</code> 文件：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Bing官方壁纸 4k超高清UHD原图</span><br><span class="line"><span class="section">date: 2025-04-01 12:18:20</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section">#### 每日更新 Bing官方壁纸 4k超高清UHD原图，鼠标悬停显示壁纸日期。</span></span><br><span class="line"></span><br><span class="line">&#123;% gallery url,https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing<span class="emphasis">_Wallpaper_</span>url.json %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-3-关键技术：jsDelivr-CDN"><a href="#5-3-关键技术：jsDelivr-CDN" class="headerlink" title="5.3 关键技术：jsDelivr CDN"></a>5.3 关键技术：jsDelivr CDN</h4><p><strong>为什么使用 jsDelivr？</strong></p>
+<p>直接访问 GitHub 原始文件有以下问题：</p>
+<ul>
+<li>国内访问速度慢或无法访问</li>
+<li>没有 CORS 头，无法跨域请求</li>
+<li>没有缓存优化</li>
+</ul>
+<p><strong>jsDelivr CDN 的优势：</strong></p>
+<ul>
+<li>✅ 全球 CDN 加速，国内访问友好</li>
+<li>✅ 自动添加 <code>Access-Control-Allow-Origin: *</code> 响应头</li>
+<li>✅ 智能缓存，访问速度快</li>
+<li>✅ 完全免费</li>
+</ul>
+<h5 id="jsDelivr-在本项目中的使用方式"><a href="#jsDelivr-在本项目中的使用方式" class="headerlink" title="jsDelivr 在本项目中的使用方式"></a>jsDelivr 在本项目中的使用方式</h5><p><strong>1. GitHub 原始文件访问方式对比</strong></p>
+<table>
+<thead>
+<tr>
+<th>访问方式</th>
+<th>URL 格式</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GitHub Raw</strong></td>
+<td><code>https://raw.githubusercontent.com/用户名/仓库名/分支/文件路径</code></td>
+<td>官方直链</td>
+<td>国内访问慢&#x2F;被墙，无 CORS 支持</td>
+</tr>
+<tr>
+<td><strong>jsDelivr CDN</strong></td>
+<td><code>https://cdn.jsdelivr.net/gh/用户名/仓库名@分支/文件路径</code></td>
+<td>全球加速，支持 CORS</td>
+<td>有缓存延迟（通常几分钟）</td>
+</tr>
+</tbody></table>
+<p><strong>2. 本项目的 URL 转换</strong></p>
+<p><strong>GitHub 原始地址</strong>（不推荐）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://raw.githubusercontent.com/lansejingyu/Bing-Wallpaper/master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure>
+
+<p><strong>jsDelivr CDN 地址</strong>（推荐）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure>
+
+<p><strong>转换规则</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">raw.githubusercontent.com/用户名/仓库名/分支/文件</span><br><span class="line">    ↓ 转换为</span><br><span class="line">cdn.jsdelivr.net/gh/用户名/仓库名@分支/文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. jsDelivr 的版本控制</strong></p>
+<p>jsDelivr 支持多种版本指定方式：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>URL 示例</th>
+<th>说明</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>指定分支</strong></td>
+<td><code>@master</code></td>
+<td>始终获取最新版本</td>
+<td>需要实时更新的数据（本项目使用）</td>
+</tr>
+<tr>
+<td><strong>指定 Tag</strong></td>
+<td><code>@v1.0.0</code></td>
+<td>固定版本，不会变化</td>
+<td>稳定的库文件</td>
+</tr>
+<tr>
+<td><strong>指定 Commit</strong></td>
+<td><code>@a1b2c3d</code></td>
+<td>精确到某次提交</td>
+<td>需要特定版本</td>
+</tr>
+<tr>
+<td><strong>省略版本</strong></td>
+<td>不加 <code>@</code></td>
+<td>自动使用最新 release</td>
+<td>有版本发布的项目</td>
+</tr>
+</tbody></table>
+<p>**本项目使用 <code>@master</code>**：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：每次 GitHub Actions 更新后，CDN 会自动同步最新数据</li>
+<li>缺点：有 1-5 分钟的缓存延迟</li>
+</ul>
+<p><strong>4. 缓存刷新策略</strong></p>
+<p>jsDelivr 的缓存机制：</p>
+<ul>
+<li><strong>默认缓存时间</strong>：7 天</li>
+<li><strong>自动更新</strong>：检测到 GitHub 文件变化后，1-5 分钟内更新</li>
+<li><strong>手动刷新</strong>：可以通过 jsDelivr 官网手动清除缓存</li>
+</ul>
+<p><strong>强制刷新方法</strong>：</p>
+<p>方法一：添加版本参数（推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json?v=20250517</span><br></pre></td></tr></table></figure>
+
+<p>方法二：使用 Purge API</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -X POST https://purge.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure>
+
+<p><strong>5. 在 Hexo 中的实际应用</strong></p>
+<p>在 <code>source/tuku/Bing/index.md</code> 中使用：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery url,https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing<span class="emphasis">_Wallpaper_</span>url.json %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>工作流程</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 用户访问博客图库页面</span><br><span class="line">    ↓</span><br><span class="line">2. Butterfly 主题的 gallery 标签发起请求</span><br><span class="line">    ↓</span><br><span class="line">3. 请求 jsDelivr CDN 上的 JSON 文件</span><br><span class="line">    ↓</span><br><span class="line">4. jsDelivr 返回 JSON 数据（带 CORS 头）</span><br><span class="line">    ↓</span><br><span class="line">5. JavaScript 解析 JSON，动态加载图片</span><br><span class="line">    ↓</span><br><span class="line">6. 图片从 Bing 官方服务器加载（UHD 高清）</span><br><span class="line">    ↓</span><br><span class="line">7. 瀑布流布局展示壁纸</span><br></pre></td></tr></table></figure>
+
+<p><strong>6. 性能优化技巧</strong></p>
+<p><strong>技巧 1：预加载 JSON 文件</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json&quot;</span> <span class="attr">as</span>=<span class="string">&quot;fetch&quot;</span> <span class="attr">crossorigin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>技巧 2：使用 CDN 组合加载</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主 CDN</span></span><br><span class="line"><span class="keyword">const</span> primaryCDN = <span class="string">&#x27;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json&#x27;</span>;</span><br><span class="line"><span class="comment">// 备用 CDN（如果 jsDelivr 失败）</span></span><br><span class="line"><span class="keyword">const</span> fallbackCDN = <span class="string">&#x27;https://raw.githubusercontent.com/lansejingyu/Bing-Wallpaper/master/Bing_Wallpaper_url.json&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>技巧 3：限制 JSON 文件大小</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 main.py 中限制保存的壁纸数量</span></span><br><span class="line">MAX_WALLPAPERS = <span class="number">100</span>  <span class="comment"># 只保留最近 100 张</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_to_json</span>(<span class="params">new_data</span>):</span><br><span class="line">    <span class="comment"># ... 读取现有数据 ...</span></span><br><span class="line">    existing_data.insert(<span class="number">0</span>, new_data)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 限制数量，避免 JSON 文件过大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(existing_data) &gt; MAX_WALLPAPERS:</span><br><span class="line">        existing_data = existing_data[:MAX_WALLPAPERS]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># ... 写回文件 ...</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>7. jsDelivr 的其他用途</strong></p>
+<p>在本项目中，jsDelivr 还可以用于：</p>
+<p><strong>加载其他静态资源</strong>：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!-- 加载自定义 CSS --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/custom.css&quot;</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 加载自定义 JS --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/gallery.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 加载图片 --&gt;</span><br><span class="line">![<span class="string">Logo</span>](<span class="link">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/logo.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>8. 监控和调试</strong></p>
+<p><strong>查看 CDN 状态</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://www.jsdelivr.com/package/gh/lansejingyu/Bing-Wallpaper</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看文件详情</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://data.jsdelivr.com/v1/package/gh/lansejingyu/Bing-Wallpaper</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试 CORS</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -I https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br><span class="line"><span class="comment"># 查看响应头中的 Access-Control-Allow-Origin</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>9. 注意事项</strong></p>
+<p>⚠️ <strong>文件大小限制</strong>：</p>
+<ul>
+<li>单个文件最大 50MB</li>
+<li>建议控制 JSON 文件在 1MB 以内</li>
+</ul>
+<p>⚠️ <strong>请求频率限制</strong>：</p>
+<ul>
+<li>无明确限制，但建议合理使用</li>
+<li>避免短时间内大量请求</li>
+</ul>
+<p>⚠️ <strong>缓存问题</strong>：</p>
+<ul>
+<li>如果需要实时更新，考虑添加时间戳参数</li>
+<li>或者使用 WebSocket 等实时推送方案</li>
+</ul>
+<p><strong>10. 总结</strong></p>
+<p>jsDelivr CDN 在本项目中的作用：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>实现方式</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>数据加速</strong></td>
+<td>全球 CDN 节点</td>
+<td>国内访问速度提升 10 倍+</td>
+</tr>
+<tr>
+<td><strong>跨域支持</strong></td>
+<td>自动添加 CORS 头</td>
+<td>前端可直接请求 JSON</td>
+</tr>
+<tr>
+<td><strong>自动更新</strong></td>
+<td>监听 GitHub 变化</td>
+<td>无需手动刷新</td>
+</tr>
+<tr>
+<td><strong>零成本</strong></td>
+<td>完全免费服务</td>
+<td>节省服务器费用</td>
+</tr>
+</tbody></table>
+<p>通过 jsDelivr，我们实现了：</p>
+<ul>
+<li>✅ GitHub 数据的全球加速访问</li>
+<li>✅ 国内用户友好的访问体验</li>
+<li>✅ 自动化的数据同步机制</li>
+<li>✅ 零成本的 CDN 解决方案</li>
+</ul>
+<h4 id="5-4-Butterfly-主题的-Gallery-标签"><a href="#5-4-Butterfly-主题的-Gallery-标签" class="headerlink" title="5.4 Butterfly 主题的 Gallery 标签"></a>5.4 Butterfly 主题的 Gallery 标签</h4><p>Butterfly 主题内置了强大的 <code>&#123;% gallery %&#125;</code> 标签，支持：</p>
+<ul>
+<li><strong>远程 JSON 数据源</strong> - 直接加载 JSON 文件</li>
+<li><strong>瀑布流布局</strong> - 自适应排列</li>
+<li><strong>图片懒加载</strong> - 优化加载速度</li>
+<li><strong>鼠标悬停显示标题</strong> - 展示壁纸信息</li>
+</ul>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery url,JSON文件地址 %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据流程图"><a href="#数据流程图" class="headerlink" title="数据流程图"></a>数据流程图</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">每天 08:00 (北京时间)</span><br><span class="line">    ↓</span><br><span class="line">GitHub Actions 触发</span><br><span class="line">    ↓</span><br><span class="line">运行 main.py</span><br><span class="line">    ↓</span><br><span class="line">调用 Bing API 获取最新壁纸</span><br><span class="line">    ↓</span><br><span class="line">解析 JSON 数据</span><br><span class="line">    ↓</span><br><span class="line">拼接 4K 图片 URL</span><br><span class="line">    ↓</span><br><span class="line">插入到 Bing_Wallpaper_url.json 开头</span><br><span class="line">    ↓</span><br><span class="line">Git commit &amp; push</span><br><span class="line">    ↓</span><br><span class="line">jsDelivr CDN 自动更新缓存</span><br><span class="line">    ↓</span><br><span class="line">博客图库实时展示最新壁纸</span><br></pre></td></tr></table></figure>
+
+<h2 id="技术亮点"><a href="#技术亮点" class="headerlink" title="技术亮点"></a>技术亮点</h2><h3 id="1-完全自动化"><a href="#1-完全自动化" class="headerlink" title="1. 完全自动化"></a>1. 完全自动化</h3><ul>
+<li>GitHub Actions 每天自动运行</li>
+<li>无需手动维护</li>
+<li>零服务器成本</li>
+</ul>
+<h3 id="2-数据分离"><a href="#2-数据分离" class="headerlink" title="2. 数据分离"></a>2. 数据分离</h3><ul>
+<li>壁纸数据独立仓库</li>
+<li>博客只负责展示</li>
+<li>便于数据复用和维护</li>
+</ul>
+<h3 id="3-CDN-加速"><a href="#3-CDN-加速" class="headerlink" title="3. CDN 加速"></a>3. CDN 加速</h3><ul>
+<li>jsDelivr 全球加速</li>
+<li>国内访问友好</li>
+<li>自动缓存优化</li>
+</ul>
+<h3 id="4-高可扩展性"><a href="#4-高可扩展性" class="headerlink" title="4. 高可扩展性"></a>4. 高可扩展性</h3><ul>
+<li>JSON 格式易于扩展</li>
+<li>可以添加更多字段（分辨率、下载链接等）</li>
+<li>可以接入其他壁纸源</li>
+</ul>
+<h3 id="5-零成本运行"><a href="#5-零成本运行" class="headerlink" title="5. 零成本运行"></a>5. 零成本运行</h3><ul>
+<li>GitHub Actions 免费额度充足</li>
+<li>GitHub 仓库免费</li>
+<li>jsDelivr CDN 免费</li>
+<li>完全不需要服务器</li>
+</ul>
+<h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><h3 id="1-GitHub-Actions-没有自动运行"><a href="#1-GitHub-Actions-没有自动运行" class="headerlink" title="1. GitHub Actions 没有自动运行"></a>1. GitHub Actions 没有自动运行</h3><p><strong>解决方法：</strong></p>
+<ul>
+<li>检查仓库设置中是否启用了 Actions</li>
+<li>检查 Workflow permissions 是否设置为 Read and write</li>
+<li>手动触发一次测试（Actions 页面 → Run workflow）</li>
+</ul>
+<h3 id="2-CDN-缓存没有更新"><a href="#2-CDN-缓存没有更新" class="headerlink" title="2. CDN 缓存没有更新"></a>2. CDN 缓存没有更新</h3><p><strong>解决方法：</strong></p>
+<ul>
+<li>jsDelivr 有缓存机制，可能需要等待几分钟</li>
+<li>可以在 URL 后添加版本号强制刷新：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json?v=20250410</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-图片加载失败"><a href="#3-图片加载失败" class="headerlink" title="3. 图片加载失败"></a>3. 图片加载失败</h3><p><strong>解决方法：</strong></p>
+<ul>
+<li>检查 JSON 文件格式是否正确</li>
+<li>检查图片 URL 是否有效</li>
+<li>查看浏览器控制台的错误信息</li>
+</ul>
+<h2 id="扩展思路"><a href="#扩展思路" class="headerlink" title="扩展思路"></a>扩展思路</h2><p>这个方案可以轻松扩展到其他场景：</p>
+<h3 id="1-其他壁纸源"><a href="#1-其他壁纸源" class="headerlink" title="1. 其他壁纸源"></a>1. 其他壁纸源</h3><ul>
+<li><strong>NASA 每日天文图</strong> - <a href="https://api.nasa.gov/planetary/apod">https://api.nasa.gov/planetary/apod</a></li>
+<li><strong>Unsplash 精选图片</strong> - <a href="https://unsplash.com/developers">https://unsplash.com/developers</a></li>
+<li><strong>Pexels 免费图库</strong> - <a href="https://www.pexels.com/api/">https://www.pexels.com/api/</a></li>
+</ul>
+<h3 id="2-功能增强"><a href="#2-功能增强" class="headerlink" title="2. 功能增强"></a>2. 功能增强</h3><ul>
+<li>添加壁纸下载功能</li>
+<li>支持多分辨率选择</li>
+<li>添加壁纸搜索功能</li>
+<li>按日期、主题分类</li>
+</ul>
+<h3 id="3-数据分析"><a href="#3-数据分析" class="headerlink" title="3. 数据分析"></a>3. 数据分析</h3><ul>
+<li>统计最受欢迎的壁纸</li>
+<li>分析壁纸主题分布</li>
+<li>生成壁纸日历</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过 <strong>Python + GitHub Actions + jsDelivr CDN + Hexo</strong>，我们实现了一个完全自动化的 Bing 壁纸获取与展示系统。</p>
+<p><strong>优势总结：</strong></p>
+<ul>
+<li>✅ <strong>零成本</strong> - 完全基于 GitHub 免费服务</li>
+<li>✅ <strong>全自动</strong> - 无需人工干预</li>
+<li>✅ <strong>高性能</strong> - CDN 加速，访问快速</li>
+<li>✅ <strong>易维护</strong> - 代码简洁，逻辑清晰</li>
+<li>✅ <strong>可复用</strong> - JSON 数据可用于其他项目</li>
+</ul>
+<p>这个方案不仅适用于个人博客，也可以应用到其他需要定期获取和展示图片的场景中。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><strong>壁纸仓库</strong>：<a href="https://github.com/lansejingyu/Bing-Wallpaper">https://github.com/lansejingyu/Bing-Wallpaper</a></li>
+<li><strong>博客图库</strong>：<a href="/tuku/Bing">Bing Wallpaper 4K</a></li>
+<li><strong>Bing 壁纸 API 文档</strong>：<a href="https://cn.bing.com/HPImageArchive.aspx">https://cn.bing.com/HPImageArchive.aspx</a></li>
+<li><strong>jsDelivr CDN</strong>：<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></li>
+<li><strong>GitHub Actions 文档</strong>：<a href="https://docs.github.com/actions">https://docs.github.com/actions</a></li>
+</ul>
+<hr>
+<p>如果这篇文章对你有帮助，欢迎在评论区分享你的想法和建议！</p>
+]]></content>
       <categories>
-          
-          <category> 技术分享 </category>
-          
+        <category>教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> AI </tag>
-            
-            <tag> 开发工具 </tag>
-            
-            <tag> Claude </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Bing官方4k超高清UHD原图壁纸获取与应用</title>
-      <link href="/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/"/>
-      <url>/Bing%E5%A3%81%E7%BA%B8%E8%8E%B7%E5%8F%96/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Bing 搜索引擎每天都会更新一张精美的高清壁纸，这些壁纸质量极高，涵盖自然风光、人文景观、动物植物等各种主题。作为一个博客爱好者，我想把这些壁纸自动收集起来，展示在博客的图库中。</p><p>本文将详细介绍如何实现一个<strong>完全自动化、零成本、高性能</strong>的 Bing 壁纸获取与展示系统。</p><span id="more"></span><h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><ul><li>✅ 每天自动获取 Bing 4K 超高清壁纸（3840x2160）</li><li>✅ 自动保存到 GitHub 仓库</li><li>✅ 通过 CDN 加速访问</li><li>✅ 在博客图库中实时展示</li><li>✅ 鼠标悬停显示壁纸日期和版权信息</li><li>✅ 完全免费，无需服务器</li></ul><p><strong>在线预览</strong>：<a href="/tuku/Bing">博客图库 - Bing Wallpaper 4K</a></p><h2 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h2><p>这是一个<strong>自动化获取 + 远程托管 + 博客展示</strong>的三层架构：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GitHub Actions (定时任务)</span><br><span class="line">    ↓ 每天自动运行</span><br><span class="line">Python 脚本获取壁纸</span><br><span class="line">    ↓ 保存到 JSON</span><br><span class="line">GitHub 仓库托管数据</span><br><span class="line">    ↓ 通过 CDN 加速</span><br><span class="line">Hexo 博客图库展示</span><br></pre></td></tr></table></figure><h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ul><li><strong>Python</strong> - 爬虫脚本</li><li><strong>GitHub Actions</strong> - 定时任务</li><li><strong>GitHub Repository</strong> - 数据存储</li><li><strong>jsDelivr CDN</strong> - 全球加速</li><li><strong>Hexo + Butterfly 主题</strong> - 博客展示</li></ul><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="第一步：创建独立的壁纸仓库"><a href="#第一步：创建独立的壁纸仓库" class="headerlink" title="第一步：创建独立的壁纸仓库"></a>第一步：创建独立的壁纸仓库</h3><p>首先在 GitHub 创建一个独立的仓库来存储壁纸数据。</p><p><strong>仓库地址</strong>：<a href="https://github.com/lansejingyu/Bing-Wallpaper">https://github.com/lansejingyu/Bing-Wallpaper</a></p><p><strong>目录结构</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Bing-Wallpaper/</span><br><span class="line">├── main.py                          # Python 爬虫脚本</span><br><span class="line">├── requirements.txt                 # 依赖包</span><br><span class="line">├── Bing_Wallpaper_url.json         # 壁纸数据存储</span><br><span class="line">├── .github/</span><br><span class="line">│   └── workflows/</span><br><span class="line">│       └── scheduled_job.yml       # GitHub Actions 定时任务</span><br><span class="line">└── README.md                        # 说明文档</span><br></pre></td></tr></table></figure><p><strong>为什么要独立仓库？</strong></p><ul><li>数据与博客分离，便于维护</li><li>可以在多个项目中复用数据</li><li>减小博客仓库体积</li></ul><h3 id="第二步：了解-Bing-壁纸-API"><a href="#第二步：了解-Bing-壁纸-API" class="headerlink" title="第二步：了解 Bing 壁纸 API"></a>第二步：了解 Bing 壁纸 API</h3><p>Bing 提供了官方的壁纸 API，可以获取每日壁纸信息。</p><h4 id="API-接口"><a href="#API-接口" class="headerlink" title="API 接口"></a>API 接口</h4><p><strong>1. 标准分辨率（1920x1080）</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;mkt=zh-CN</span><br></pre></td></tr></table></figure><p><strong>2. 4K 超高清（3840x2160）</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;nc=1614319565639&amp;pid=hp&amp;FORM=BEHPTB&amp;uhd=1&amp;uhdwidth=3840&amp;uhdheight=2160</span><br></pre></td></tr></table></figure><h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><table><thead><tr><th align="center">参数</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">format</td><td align="center">返回数据格式：js (JSON) &#x2F; xml (XML)</td></tr><tr><td align="center">idx</td><td align="center">返回第几天的图片：0-今天，1-昨天，2-前天</td></tr><tr><td align="center">n</td><td align="center">返回数量</td></tr><tr><td align="center">mkt</td><td align="center">地区：zh-CN (中国)</td></tr><tr><td align="center">uhd</td><td align="center">是否返回超高清</td></tr><tr><td align="center">uhdwidth</td><td align="center">超高清宽度</td></tr><tr><td align="center">uhdheight</td><td align="center">超高清高度</td></tr></tbody></table><h4 id="获取-4K-原图直链"><a href="#获取-4K-原图直链" class="headerlink" title="获取 4K 原图直链"></a>获取 4K 原图直链</h4><p>API 返回的 JSON 中包含 <code>urlbase</code> 字段，拼接后即可得到 4K 原图：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cn.bing.com + urlbase + _UHD.jpg</span><br></pre></td></tr></table></figure><p>例如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cn.bing.com/th?id=OHR.UtahBadlands_ZH-CN9174002963_UHD.jpg</span><br></pre></td></tr></table></figure><h3 id="第三步：编写-Python-爬虫脚本"><a href="#第三步：编写-Python-爬虫脚本" class="headerlink" title="第三步：编写 Python 爬虫脚本"></a>第三步：编写 Python 爬虫脚本</h3><p>创建 <code>main.py</code> 文件，实现壁纸获取和保存功能。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_bing_wallpaper</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取 Bing 每日壁纸&quot;&quot;&quot;</span></span><br><span class="line">    url = <span class="string">&quot;https://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;nc=1614319565639&amp;pid=hp&amp;FORM=BEHPTB&amp;uhd=1&amp;uhdwidth=3840&amp;uhdheight=2160&quot;</span></span><br><span class="line">    </span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Cookie&#x27;</span>: <span class="string">&#x27;MUID=3215B205599A658F1EB3A7C4584364E7; SRCHD=AF=NOFORM; SRCHHPGUSR=SRCHLANG=zh-Hans&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 发送 HTTP 请求</span></span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        response.raise_for_status()  <span class="comment"># 检查 HTTP 状态码</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 解析 JSON 数据</span></span><br><span class="line">        data = json.loads(response.text)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 URL</span></span><br><span class="line">        image_url_base = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;urlbase&quot;</span>]</span><br><span class="line">        image_url = <span class="string">f&quot;https://cn.bing.com<span class="subst">&#123;image_url_base&#125;</span>_UHD.jpg&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 alt</span></span><br><span class="line">        alt = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;urlbase&quot;</span>] + <span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 壁纸 title（拼接时间+地址）</span></span><br><span class="line">        title_time = data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;title&quot;</span>] + <span class="string">&#x27;_&#x27;</span> + data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;enddate&quot;</span>] + <span class="string">&#x27;_&#x27;</span> + data[<span class="string">&quot;images&quot;</span>][<span class="number">0</span>][<span class="string">&quot;copyright&quot;</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;成功获取 4K Bing 壁纸 URL:&quot;</span>, image_url)</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&quot;url&quot;</span>: image_url,</span><br><span class="line">            <span class="string">&quot;alt&quot;</span>: alt,</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: title_time</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;请求失败:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> json.JSONDecodeError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;JSON 解析失败:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> KeyError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;JSON 数据格式异常:&quot;</span>, e)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;未知错误:&quot;</span>, e)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_to_json</span>(<span class="params">new_data</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;保存壁纸数据到 JSON 文件&quot;&quot;&quot;</span></span><br><span class="line">    json_file = <span class="string">&#x27;Bing_Wallpaper_url.json&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 如果文件不存在，创建初始结构</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(json_file):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            json.dump([], f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">4</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 读取现有数据</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            existing_data = json.load(f)</span><br><span class="line">    <span class="keyword">except</span> (json.JSONDecodeError, FileNotFoundError):</span><br><span class="line">        existing_data = []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 添加新数据到开头（最新的在最前面）</span></span><br><span class="line">    existing_data.insert(<span class="number">0</span>, new_data)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 写回文件</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(json_file, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        json.dump(existing_data, f, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">4</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;数据已添加到 <span class="subst">&#123;json_file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    wallpaper_data = get_bing_wallpaper()</span><br><span class="line">    <span class="keyword">if</span> wallpaper_data:</span><br><span class="line">        save_to_json(wallpaper_data)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;最新壁纸数据已更新:&quot;</span>, wallpaper_data)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;获取壁纸失败&quot;</span>)</span><br></pre></td></tr></table></figure><h4 id="代码说明"><a href="#代码说明" class="headerlink" title="代码说明"></a>代码说明</h4><ol><li><p><strong><code>get_bing_wallpaper()</code></strong> - 获取壁纸信息</p><ul><li>调用 Bing API</li><li>解析 JSON 数据</li><li>拼接 4K 图片 URL</li><li>组合标题信息（标题 + 日期 + 版权）</li></ul></li><li><p><strong><code>save_to_json()</code></strong> - 保存到 JSON 文件</p><ul><li>读取现有数据</li><li>将新数据插入到数组开头（保证最新的在前面）</li><li>写回文件</li></ul></li><li><p><strong>数据格式</strong></p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://cn.bing.com/th?id=OHR.SaguaroRainbow_ZH-CN0139056375_UHD.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;alt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/th?id=OHR.SaguaroRainbow_ZH-CN0139056375.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;天空无极限_20250403_沃森峰上空的彩虹, 巨人柱国家公园, 亚利桑那州, 美国 (© Frank Staub/Getty Images)&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></li></ol><h4 id="创建依赖文件"><a href="#创建依赖文件" class="headerlink" title="创建依赖文件"></a>创建依赖文件</h4><p><code>requirements.txt</code>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests</span><br></pre></td></tr></table></figure><h3 id="第四步：配置-GitHub-Actions-自动化"><a href="#第四步：配置-GitHub-Actions-自动化" class="headerlink" title="第四步：配置 GitHub Actions 自动化"></a>第四步：配置 GitHub Actions 自动化</h3><p>创建 <code>.github/workflows/scheduled_job.yml</code> 文件，实现每天自动运行。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Scheduled</span> <span class="string">Python</span> <span class="string">Job</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 0 * * *&#x27;</span>  <span class="comment"># 每天 UTC 0点（北京时间 8:00）</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span>      <span class="comment"># 支持手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">execute-script:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># 步骤1：拉取仓库代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">Code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤2：设置 Python 环境</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">Python</span> <span class="number">3.10</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-python@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">python-version:</span> <span class="string">&quot;3.10&quot;</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤3：安装依赖</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          pip install -r requirements.txt</span></span><br><span class="line"><span class="string"></span>      </span><br><span class="line">      <span class="comment"># 步骤4：运行 Python 脚本</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Script</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">python</span> <span class="string">-u</span> <span class="string">main.py</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment"># 步骤5：提交更新的文件</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Commit</span> <span class="string">and</span> <span class="string">Push</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          git config --global user.name &quot;GitHub Actions&quot;</span></span><br><span class="line"><span class="string">          git config --global user.email &quot;actions@github.com&quot;</span></span><br><span class="line"><span class="string">          git add Bing_Wallpaper_url.json</span></span><br><span class="line"><span class="string">          git commit -m &quot;Update Bing wallpapers&quot; || echo &quot;No changes to commit&quot;</span></span><br><span class="line"><span class="string">          git push</span></span><br></pre></td></tr></table></figure><h4 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h4><ol><li><p><strong>触发条件</strong></p><ul><li><code>schedule: cron: &#39;0 0 * * *&#39;</code> - 每天 UTC 0点（北京时间 8:00）自动运行</li><li><code>workflow_dispatch</code> - 支持在 GitHub 页面手动触发</li></ul></li><li><p><strong>运行环境</strong></p><ul><li><code>ubuntu-latest</code> - 使用最新的 Ubuntu 系统</li></ul></li><li><p><strong>执行步骤</strong></p><ul><li>拉取代码</li><li>安装 Python 3.10</li><li>安装依赖包</li><li>运行爬虫脚本</li><li>提交更新的 JSON 文件</li></ul></li><li><p><strong>权限设置</strong></p><ul><li>需要在仓库设置中允许 GitHub Actions 写入权限</li><li>Settings → Actions → General → Workflow permissions → Read and write permissions</li></ul></li></ol><h3 id="第五步：在-Hexo-博客中集成"><a href="#第五步：在-Hexo-博客中集成" class="headerlink" title="第五步：在 Hexo 博客中集成"></a>第五步：在 Hexo 博客中集成</h3><h4 id="5-1-创建图库主页"><a href="#5-1-创建图库主页" class="headerlink" title="5.1 创建图库主页"></a>5.1 创建图库主页</h4><p>创建 <code>source/tuku/index.md</code> 文件：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 图库</span><br><span class="line"><span class="section">date: 2025-03-29 00:30:07</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;Bing Wallpaper 4K&#x27; &#x27;Bing 4k超高清UHD原图-每日更新&#x27; &#x27;/tuku/Bing&#x27; https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure><h4 id="5-2-创建-Bing-壁纸子页面"><a href="#5-2-创建-Bing-壁纸子页面" class="headerlink" title="5.2 创建 Bing 壁纸子页面"></a>5.2 创建 Bing 壁纸子页面</h4><p>创建 <code>source/tuku/Bing/index.md</code> 文件：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Bing官方壁纸 4k超高清UHD原图</span><br><span class="line"><span class="section">date: 2025-04-01 12:18:20</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section">#### 每日更新 Bing官方壁纸 4k超高清UHD原图，鼠标悬停显示壁纸日期。</span></span><br><span class="line"></span><br><span class="line">&#123;% gallery url,https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing<span class="emphasis">_Wallpaper_</span>url.json %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure><h4 id="5-3-关键技术：jsDelivr-CDN"><a href="#5-3-关键技术：jsDelivr-CDN" class="headerlink" title="5.3 关键技术：jsDelivr CDN"></a>5.3 关键技术：jsDelivr CDN</h4><p><strong>为什么使用 jsDelivr？</strong></p><p>直接访问 GitHub 原始文件有以下问题：</p><ul><li>国内访问速度慢或无法访问</li><li>没有 CORS 头，无法跨域请求</li><li>没有缓存优化</li></ul><p><strong>jsDelivr CDN 的优势：</strong></p><ul><li>✅ 全球 CDN 加速，国内访问友好</li><li>✅ 自动添加 <code>Access-Control-Allow-Origin: *</code> 响应头</li><li>✅ 智能缓存，访问速度快</li><li>✅ 完全免费</li></ul><h5 id="jsDelivr-在本项目中的使用方式"><a href="#jsDelivr-在本项目中的使用方式" class="headerlink" title="jsDelivr 在本项目中的使用方式"></a>jsDelivr 在本项目中的使用方式</h5><p><strong>1. GitHub 原始文件访问方式对比</strong></p><table><thead><tr><th>访问方式</th><th>URL 格式</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td><strong>GitHub Raw</strong></td><td><code>https://raw.githubusercontent.com/用户名/仓库名/分支/文件路径</code></td><td>官方直链</td><td>国内访问慢&#x2F;被墙，无 CORS 支持</td></tr><tr><td><strong>jsDelivr CDN</strong></td><td><code>https://cdn.jsdelivr.net/gh/用户名/仓库名@分支/文件路径</code></td><td>全球加速，支持 CORS</td><td>有缓存延迟（通常几分钟）</td></tr></tbody></table><p><strong>2. 本项目的 URL 转换</strong></p><p><strong>GitHub 原始地址</strong>（不推荐）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/lansejingyu/Bing-Wallpaper/master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure><p><strong>jsDelivr CDN 地址</strong>（推荐）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure><p><strong>转换规则</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">raw.githubusercontent.com/用户名/仓库名/分支/文件</span><br><span class="line">    ↓ 转换为</span><br><span class="line">cdn.jsdelivr.net/gh/用户名/仓库名@分支/文件</span><br></pre></td></tr></table></figure><p><strong>3. jsDelivr 的版本控制</strong></p><p>jsDelivr 支持多种版本指定方式：</p><table><thead><tr><th>方式</th><th>URL 示例</th><th>说明</th><th>适用场景</th></tr></thead><tbody><tr><td><strong>指定分支</strong></td><td><code>@master</code></td><td>始终获取最新版本</td><td>需要实时更新的数据（本项目使用）</td></tr><tr><td><strong>指定 Tag</strong></td><td><code>@v1.0.0</code></td><td>固定版本，不会变化</td><td>稳定的库文件</td></tr><tr><td><strong>指定 Commit</strong></td><td><code>@a1b2c3d</code></td><td>精确到某次提交</td><td>需要特定版本</td></tr><tr><td><strong>省略版本</strong></td><td>不加 <code>@</code></td><td>自动使用最新 release</td><td>有版本发布的项目</td></tr></tbody></table><p>**本项目使用 <code>@master</code>**：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure><ul><li>优点：每次 GitHub Actions 更新后，CDN 会自动同步最新数据</li><li>缺点：有 1-5 分钟的缓存延迟</li></ul><p><strong>4. 缓存刷新策略</strong></p><p>jsDelivr 的缓存机制：</p><ul><li><strong>默认缓存时间</strong>：7 天</li><li><strong>自动更新</strong>：检测到 GitHub 文件变化后，1-5 分钟内更新</li><li><strong>手动刷新</strong>：可以通过 jsDelivr 官网手动清除缓存</li></ul><p><strong>强制刷新方法</strong>：</p><p>方法一：添加版本参数（推荐）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json?v=20250517</span><br></pre></td></tr></table></figure><p>方法二：使用 Purge API</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://purge.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br></pre></td></tr></table></figure><p><strong>5. 在 Hexo 中的实际应用</strong></p><p>在 <code>source/tuku/Bing/index.md</code> 中使用：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery url,https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing<span class="emphasis">_Wallpaper_</span>url.json %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure><p><strong>工作流程</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. 用户访问博客图库页面</span><br><span class="line">    ↓</span><br><span class="line">2. Butterfly 主题的 gallery 标签发起请求</span><br><span class="line">    ↓</span><br><span class="line">3. 请求 jsDelivr CDN 上的 JSON 文件</span><br><span class="line">    ↓</span><br><span class="line">4. jsDelivr 返回 JSON 数据（带 CORS 头）</span><br><span class="line">    ↓</span><br><span class="line">5. JavaScript 解析 JSON，动态加载图片</span><br><span class="line">    ↓</span><br><span class="line">6. 图片从 Bing 官方服务器加载（UHD 高清）</span><br><span class="line">    ↓</span><br><span class="line">7. 瀑布流布局展示壁纸</span><br></pre></td></tr></table></figure><p><strong>6. 性能优化技巧</strong></p><p><strong>技巧 1：预加载 JSON 文件</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json&quot;</span> <span class="attr">as</span>=<span class="string">&quot;fetch&quot;</span> <span class="attr">crossorigin</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>技巧 2：使用 CDN 组合加载</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主 CDN</span></span><br><span class="line"><span class="keyword">const</span> primaryCDN = <span class="string">&#x27;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json&#x27;</span>;</span><br><span class="line"><span class="comment">// 备用 CDN（如果 jsDelivr 失败）</span></span><br><span class="line"><span class="keyword">const</span> fallbackCDN = <span class="string">&#x27;https://raw.githubusercontent.com/lansejingyu/Bing-Wallpaper/master/Bing_Wallpaper_url.json&#x27;</span>;</span><br></pre></td></tr></table></figure><p><strong>技巧 3：限制 JSON 文件大小</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 main.py 中限制保存的壁纸数量</span></span><br><span class="line">MAX_WALLPAPERS = <span class="number">100</span>  <span class="comment"># 只保留最近 100 张</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_to_json</span>(<span class="params">new_data</span>):</span><br><span class="line">    <span class="comment"># ... 读取现有数据 ...</span></span><br><span class="line">    existing_data.insert(<span class="number">0</span>, new_data)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 限制数量，避免 JSON 文件过大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(existing_data) &gt; MAX_WALLPAPERS:</span><br><span class="line">        existing_data = existing_data[:MAX_WALLPAPERS]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># ... 写回文件 ...</span></span><br></pre></td></tr></table></figure><p><strong>7. jsDelivr 的其他用途</strong></p><p>在本项目中，jsDelivr 还可以用于：</p><p><strong>加载其他静态资源</strong>：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 加载自定义 CSS --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/custom.css&quot;</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 加载自定义 JS --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/gallery.js&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!-- 加载图片 --&gt;</span><br><span class="line">![<span class="string">Logo</span>](<span class="link">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/logo.png</span>)</span><br></pre></td></tr></table></figure><p><strong>8. 监控和调试</strong></p><p><strong>查看 CDN 状态</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.jsdelivr.com/package/gh/lansejingyu/Bing-Wallpaper</span><br></pre></td></tr></table></figure><p><strong>查看文件详情</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://data.jsdelivr.com/v1/package/gh/lansejingyu/Bing-Wallpaper</span><br></pre></td></tr></table></figure><p><strong>测试 CORS</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -I https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json</span><br><span class="line"><span class="comment"># 查看响应头中的 Access-Control-Allow-Origin</span></span><br></pre></td></tr></table></figure><p><strong>9. 注意事项</strong></p><p>⚠️ <strong>文件大小限制</strong>：</p><ul><li>单个文件最大 50MB</li><li>建议控制 JSON 文件在 1MB 以内</li></ul><p>⚠️ <strong>请求频率限制</strong>：</p><ul><li>无明确限制，但建议合理使用</li><li>避免短时间内大量请求</li></ul><p>⚠️ <strong>缓存问题</strong>：</p><ul><li>如果需要实时更新，考虑添加时间戳参数</li><li>或者使用 WebSocket 等实时推送方案</li></ul><p><strong>10. 总结</strong></p><p>jsDelivr CDN 在本项目中的作用：</p><table><thead><tr><th>功能</th><th>实现方式</th><th>效果</th></tr></thead><tbody><tr><td><strong>数据加速</strong></td><td>全球 CDN 节点</td><td>国内访问速度提升 10 倍+</td></tr><tr><td><strong>跨域支持</strong></td><td>自动添加 CORS 头</td><td>前端可直接请求 JSON</td></tr><tr><td><strong>自动更新</strong></td><td>监听 GitHub 变化</td><td>无需手动刷新</td></tr><tr><td><strong>零成本</strong></td><td>完全免费服务</td><td>节省服务器费用</td></tr></tbody></table><p>通过 jsDelivr，我们实现了：</p><ul><li>✅ GitHub 数据的全球加速访问</li><li>✅ 国内用户友好的访问体验</li><li>✅ 自动化的数据同步机制</li><li>✅ 零成本的 CDN 解决方案</li></ul><h4 id="5-4-Butterfly-主题的-Gallery-标签"><a href="#5-4-Butterfly-主题的-Gallery-标签" class="headerlink" title="5.4 Butterfly 主题的 Gallery 标签"></a>5.4 Butterfly 主题的 Gallery 标签</h4><p>Butterfly 主题内置了强大的 <code>&#123;% gallery %&#125;</code> 标签，支持：</p><ul><li><strong>远程 JSON 数据源</strong> - 直接加载 JSON 文件</li><li><strong>瀑布流布局</strong> - 自适应排列</li><li><strong>图片懒加载</strong> - 优化加载速度</li><li><strong>鼠标悬停显示标题</strong> - 展示壁纸信息</li></ul><p><strong>使用方法：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery url,JSON文件地址 %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure><h2 id="数据流程图"><a href="#数据流程图" class="headerlink" title="数据流程图"></a>数据流程图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">每天 08:00 (北京时间)</span><br><span class="line">    ↓</span><br><span class="line">GitHub Actions 触发</span><br><span class="line">    ↓</span><br><span class="line">运行 main.py</span><br><span class="line">    ↓</span><br><span class="line">调用 Bing API 获取最新壁纸</span><br><span class="line">    ↓</span><br><span class="line">解析 JSON 数据</span><br><span class="line">    ↓</span><br><span class="line">拼接 4K 图片 URL</span><br><span class="line">    ↓</span><br><span class="line">插入到 Bing_Wallpaper_url.json 开头</span><br><span class="line">    ↓</span><br><span class="line">Git commit &amp; push</span><br><span class="line">    ↓</span><br><span class="line">jsDelivr CDN 自动更新缓存</span><br><span class="line">    ↓</span><br><span class="line">博客图库实时展示最新壁纸</span><br></pre></td></tr></table></figure><h2 id="技术亮点"><a href="#技术亮点" class="headerlink" title="技术亮点"></a>技术亮点</h2><h3 id="1-完全自动化"><a href="#1-完全自动化" class="headerlink" title="1. 完全自动化"></a>1. 完全自动化</h3><ul><li>GitHub Actions 每天自动运行</li><li>无需手动维护</li><li>零服务器成本</li></ul><h3 id="2-数据分离"><a href="#2-数据分离" class="headerlink" title="2. 数据分离"></a>2. 数据分离</h3><ul><li>壁纸数据独立仓库</li><li>博客只负责展示</li><li>便于数据复用和维护</li></ul><h3 id="3-CDN-加速"><a href="#3-CDN-加速" class="headerlink" title="3. CDN 加速"></a>3. CDN 加速</h3><ul><li>jsDelivr 全球加速</li><li>国内访问友好</li><li>自动缓存优化</li></ul><h3 id="4-高可扩展性"><a href="#4-高可扩展性" class="headerlink" title="4. 高可扩展性"></a>4. 高可扩展性</h3><ul><li>JSON 格式易于扩展</li><li>可以添加更多字段（分辨率、下载链接等）</li><li>可以接入其他壁纸源</li></ul><h3 id="5-零成本运行"><a href="#5-零成本运行" class="headerlink" title="5. 零成本运行"></a>5. 零成本运行</h3><ul><li>GitHub Actions 免费额度充足</li><li>GitHub 仓库免费</li><li>jsDelivr CDN 免费</li><li>完全不需要服务器</li></ul><h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><h3 id="1-GitHub-Actions-没有自动运行"><a href="#1-GitHub-Actions-没有自动运行" class="headerlink" title="1. GitHub Actions 没有自动运行"></a>1. GitHub Actions 没有自动运行</h3><p><strong>解决方法：</strong></p><ul><li>检查仓库设置中是否启用了 Actions</li><li>检查 Workflow permissions 是否设置为 Read and write</li><li>手动触发一次测试（Actions 页面 → Run workflow）</li></ul><h3 id="2-CDN-缓存没有更新"><a href="#2-CDN-缓存没有更新" class="headerlink" title="2. CDN 缓存没有更新"></a>2. CDN 缓存没有更新</h3><p><strong>解决方法：</strong></p><ul><li>jsDelivr 有缓存机制，可能需要等待几分钟</li><li>可以在 URL 后添加版本号强制刷新：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/lansejingyu/Bing-Wallpaper@master/Bing_Wallpaper_url.json?v=20250410</span><br></pre></td></tr></table></figure></li></ul><h3 id="3-图片加载失败"><a href="#3-图片加载失败" class="headerlink" title="3. 图片加载失败"></a>3. 图片加载失败</h3><p><strong>解决方法：</strong></p><ul><li>检查 JSON 文件格式是否正确</li><li>检查图片 URL 是否有效</li><li>查看浏览器控制台的错误信息</li></ul><h2 id="扩展思路"><a href="#扩展思路" class="headerlink" title="扩展思路"></a>扩展思路</h2><p>这个方案可以轻松扩展到其他场景：</p><h3 id="1-其他壁纸源"><a href="#1-其他壁纸源" class="headerlink" title="1. 其他壁纸源"></a>1. 其他壁纸源</h3><ul><li><strong>NASA 每日天文图</strong> - <a href="https://api.nasa.gov/planetary/apod">https://api.nasa.gov/planetary/apod</a></li><li><strong>Unsplash 精选图片</strong> - <a href="https://unsplash.com/developers">https://unsplash.com/developers</a></li><li><strong>Pexels 免费图库</strong> - <a href="https://www.pexels.com/api/">https://www.pexels.com/api/</a></li></ul><h3 id="2-功能增强"><a href="#2-功能增强" class="headerlink" title="2. 功能增强"></a>2. 功能增强</h3><ul><li>添加壁纸下载功能</li><li>支持多分辨率选择</li><li>添加壁纸搜索功能</li><li>按日期、主题分类</li></ul><h3 id="3-数据分析"><a href="#3-数据分析" class="headerlink" title="3. 数据分析"></a>3. 数据分析</h3><ul><li>统计最受欢迎的壁纸</li><li>分析壁纸主题分布</li><li>生成壁纸日历</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过 <strong>Python + GitHub Actions + jsDelivr CDN + Hexo</strong>，我们实现了一个完全自动化的 Bing 壁纸获取与展示系统。</p><p><strong>优势总结：</strong></p><ul><li>✅ <strong>零成本</strong> - 完全基于 GitHub 免费服务</li><li>✅ <strong>全自动</strong> - 无需人工干预</li><li>✅ <strong>高性能</strong> - CDN 加速，访问快速</li><li>✅ <strong>易维护</strong> - 代码简洁，逻辑清晰</li><li>✅ <strong>可复用</strong> - JSON 数据可用于其他项目</li></ul><p>这个方案不仅适用于个人博客，也可以应用到其他需要定期获取和展示图片的场景中。</p><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul><li><strong>壁纸仓库</strong>：<a href="https://github.com/lansejingyu/Bing-Wallpaper">https://github.com/lansejingyu/Bing-Wallpaper</a></li><li><strong>博客图库</strong>：<a href="/tuku/Bing">Bing Wallpaper 4K</a></li><li><strong>Bing 壁纸 API 文档</strong>：<a href="https://cn.bing.com/HPImageArchive.aspx">https://cn.bing.com/HPImageArchive.aspx</a></li><li><strong>jsDelivr CDN</strong>：<a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></li><li><strong>GitHub Actions 文档</strong>：<a href="https://docs.github.com/actions">https://docs.github.com/actions</a></li></ul><hr><p>如果这篇文章对你有帮助，欢迎在评论区分享你的想法和建议！</p>]]></content>
-      
-      
+      <tags>
+        <tag>壁纸</tag>
+        <tag>Bing</tag>
+        <tag>教程</tag>
+        <tag>博客</tag>
+        <tag>Python</tag>
+        <tag>GitHub Actions</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Claude Code使用指南</title>
+    <url>/Claude-Code%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h2 id="什么是-Claude-Code？"><a href="#什么是-Claude-Code？" class="headerlink" title="什么是 Claude Code？"></a>什么是 Claude Code？</h2><p>Claude Code 是 Anthropic 推出的 AI 编程助手，它不仅仅是一个代码补全工具，而是一个能够理解项目上下文、执行复杂任务的智能开发伙伴。Claude Code 可以通过 CLI（命令行）、桌面应用、Web 应用（claude.ai&#x2F;code）以及 IDE 扩展（VS Code、JetBrains）等多种方式使用。</p>
+<span id="more"></span>
+
+<h2 id="核心特点"><a href="#核心特点" class="headerlink" title="核心特点"></a>核心特点</h2><h3 id="1-强大的上下文理解能力"><a href="#1-强大的上下文理解能力" class="headerlink" title="1. 强大的上下文理解能力"></a>1. 强大的上下文理解能力</h3><p>Claude Code 基于 Claude Opus 4.7 模型，拥有 100 万 token 的上下文窗口，能够理解整个项目的代码结构和业务逻辑。</p>
+<h3 id="2-主动执行能力"><a href="#2-主动执行能力" class="headerlink" title="2. 主动执行能力"></a>2. 主动执行能力</h3><p>不同于传统的代码助手只提供建议，Claude Code 可以：</p>
+<ul>
+<li>直接读写文件</li>
+<li>执行终端命令</li>
+<li>运行测试和构建</li>
+<li>部署代码</li>
+<li>创建 Git 提交和 PR</li>
+</ul>
+<h3 id="3-智能工具调用"><a href="#3-智能工具调用" class="headerlink" title="3. 智能工具调用"></a>3. 智能工具调用</h3><p>Claude Code 内置了多种专用工具：</p>
+<ul>
+<li><strong>Read&#x2F;Write&#x2F;Edit</strong>：文件操作</li>
+<li><strong>Bash</strong>：执行命令</li>
+<li><strong>Glob&#x2F;Grep</strong>：代码搜索</li>
+<li><strong>Agent</strong>：委派子任务给专门的代理</li>
+<li><strong>WebSearch&#x2F;WebFetch</strong>：获取最新信息</li>
+</ul>
+<h2 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h2><h3 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过 npm 安装（CLI 版本）</span></span><br><span class="line">npm install -g @anthropic-ai/claude-code</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 Claude Code</span></span><br><span class="line">claude</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用交互方式"><a href="#常用交互方式" class="headerlink" title="常用交互方式"></a>常用交互方式</h3><h4 id="1-直接对话"><a href="#1-直接对话" class="headerlink" title="1. 直接对话"></a>1. 直接对话</h4><p>直接描述你想做什么，Claude Code 会理解并执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：帮我创建一个新的 React 组件 UserProfile</span><br><span class="line">Claude：[创建文件、编写代码、添加样式]</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用斜杠命令"><a href="#2-使用斜杠命令" class="headerlink" title="2. 使用斜杠命令"></a>2. 使用斜杠命令</h4><p>Claude Code 支持多种快捷命令：</p>
+<ul>
+<li><code>/help</code> - 获取帮助</li>
+<li><code>/clear</code> - 清空对话历史</li>
+<li><code>/config</code> - 配置设置</li>
+<li><code>/init</code> - 初始化 CLAUDE.md 项目文档</li>
+</ul>
+<h4 id="3-文件引用"><a href="#3-文件引用" class="headerlink" title="3. 文件引用"></a>3. 文件引用</h4><p>使用 <code>@</code> 符号引用文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：@src/utils.ts 这个文件中的日期格式化函数有 bug</span><br><span class="line">Claude：[读取文件、分析问题、修复代码]</span><br></pre></td></tr></table></figure>
+
+<h2 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h2><h3 id="1-项目文档（CLAUDE-md）"><a href="#1-项目文档（CLAUDE-md）" class="headerlink" title="1. 项目文档（CLAUDE.md）"></a>1. 项目文档（CLAUDE.md）</h3><p>在项目根目录创建 <code>CLAUDE.md</code> 文件，记录：</p>
+<ul>
+<li>项目架构说明</li>
+<li>常用命令</li>
+<li>开发规范</li>
+<li>部署流程</li>
+</ul>
+<p>Claude Code 会自动读取这个文件，更好地理解你的项目。</p>
+<h3 id="2-任务规划模式"><a href="#2-任务规划模式" class="headerlink" title="2. 任务规划模式"></a>2. 任务规划模式</h3><p>对于复杂任务，Claude Code 会进入规划模式：</p>
+<ol>
+<li>分析需求</li>
+<li>制定实施计划</li>
+<li>征求你的确认</li>
+<li>执行实施</li>
+</ol>
+<h3 id="3-并行执行"><a href="#3-并行执行" class="headerlink" title="3. 并行执行"></a>3. 并行执行</h3><p>Claude Code 可以同时执行多个独立任务，提高效率。</p>
+<h3 id="4-上下文管理"><a href="#4-上下文管理" class="headerlink" title="4. 上下文管理"></a>4. 上下文管理</h3><p>当对话过长时，Claude Code 会自动压缩历史上下文，保留关键信息，让你可以持续工作而不受上下文窗口限制。</p>
+<h2 id="实际应用案例"><a href="#实际应用案例" class="headerlink" title="实际应用案例"></a>实际应用案例</h2><h3 id="案例-1：创建-Hexo-博客文章"><a href="#案例-1：创建-Hexo-博客文章" class="headerlink" title="案例 1：创建 Hexo 博客文章"></a>案例 1：创建 Hexo 博客文章</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：帮我创建一篇关于 Python 装饰器的博客文章</span><br><span class="line">Claude：</span><br><span class="line">1. 执行 hexo new &quot;Python装饰器详解&quot;</span><br><span class="line">2. 填充文章内容</span><br><span class="line">3. 添加代码示例</span><br><span class="line">4. 设置标签和分类</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例-2：修复-Bug"><a href="#案例-2：修复-Bug" class="headerlink" title="案例 2：修复 Bug"></a>案例 2：修复 Bug</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：登录功能有问题，用户点击登录按钮没反应</span><br><span class="line">Claude：</span><br><span class="line">1. 搜索登录相关代码</span><br><span class="line">2. 检查事件绑定</span><br><span class="line">3. 查看控制台错误</span><br><span class="line">4. 定位问题并修复</span><br><span class="line">5. 运行测试验证</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例-3：重构代码"><a href="#案例-3：重构代码" class="headerlink" title="案例 3：重构代码"></a>案例 3：重构代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">你：把这个组件拆分成更小的子组件</span><br><span class="line">Claude：</span><br><span class="line">1. 分析当前组件结构</span><br><span class="line">2. 制定拆分方案</span><br><span class="line">3. 创建新的子组件文件</span><br><span class="line">4. 重构主组件</span><br><span class="line">5. 更新导入和导出</span><br><span class="line">6. 运行测试确保功能正常</span><br></pre></td></tr></table></figure>
+
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><h3 id="1-明确描述需求"><a href="#1-明确描述需求" class="headerlink" title="1. 明确描述需求"></a>1. 明确描述需求</h3><p>越具体的描述，Claude Code 越能准确理解你的意图。</p>
+<p><strong>不好的例子</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">修改一下这个文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>好的例子</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">把 UserList 组件中的表格改成卡片布局，每行显示 3 个卡片</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-善用项目文档"><a href="#2-善用项目文档" class="headerlink" title="2. 善用项目文档"></a>2. 善用项目文档</h3><p>维护好 <code>CLAUDE.md</code>，让 Claude Code 了解：</p>
+<ul>
+<li>项目使用的技术栈</li>
+<li>代码规范和风格</li>
+<li>测试和部署流程</li>
+</ul>
+<h3 id="3-分步骤处理复杂任务"><a href="#3-分步骤处理复杂任务" class="headerlink" title="3. 分步骤处理复杂任务"></a>3. 分步骤处理复杂任务</h3><p>对于大型任务，可以分解成多个小步骤，逐步完成。</p>
+<h3 id="4-验证结果"><a href="#4-验证结果" class="headerlink" title="4. 验证结果"></a>4. 验证结果</h3><p>Claude Code 执行完任务后，建议：</p>
+<ul>
+<li>查看代码变更</li>
+<li>运行测试</li>
+<li>本地验证功能</li>
+</ul>
+<h2 id="安全性考虑"><a href="#安全性考虑" class="headerlink" title="安全性考虑"></a>安全性考虑</h2><p>Claude Code 在执行高风险操作前会征求确认：</p>
+<ul>
+<li>删除文件</li>
+<li>强制推送代码</li>
+<li>修改生产环境配置</li>
+<li>执行破坏性命令</li>
+</ul>
+<p>你可以通过权限设置控制 Claude Code 的操作范围。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Claude Code 是一个强大的 AI 编程助手，它能够：</p>
+<ul>
+<li>✅ 理解复杂的项目上下文</li>
+<li>✅ 主动执行开发任务</li>
+<li>✅ 处理从编码到部署的完整流程</li>
+<li>✅ 持续学习你的项目和偏好</li>
+</ul>
+<p>合理使用 Claude Code，可以显著提升开发效率，让你专注于架构设计和业务逻辑，而把重复性的编码工作交给 AI 处理。</p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
+<li>官方网站：<a href="https://claude.ai/code">https://claude.ai/code</a></li>
+<li>文档：<a href="https://docs.anthropic.com/claude-code">https://docs.anthropic.com/claude-code</a></li>
+<li>GitHub：<a href="https://github.com/anthropics/claude-code">https://github.com/anthropics/claude-code</a></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> 教程 </category>
-          
+        <category>技术分享</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客 </tag>
-            
-            <tag> 壁纸 </tag>
-            
-            <tag> Bing </tag>
-            
-            <tag> 教程 </tag>
-            
-            <tag> Python </tag>
-            
-            <tag> GitHub Actions </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World 🌟</title>
-      <link href="/Hello-World/"/>
-      <url>/Hello-World/</url>
-      
-        <content type="html"><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 --><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#%E5%89%8D%E8%A8%80">1</a></li><li><a href="#%E5%89%8D%E8%A8%802">2</a></li><li><a href="#%E5%89%8D%E8%A8%803">3</a></li></ul><!-- 使用html语法增加跳转链接,可以在文章页形成目录 --><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p><h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p><h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p><p>当初写博客的初衷有两个：</p><p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p><p>运营和维护博客需要多少时间和金钱？</p><p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p><p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p><p>欢迎关注我的博客，期待与你一起探索编程的世界！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") --><p><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯"></p><!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。--><p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p><!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 --><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯" class="no-lightbox"><!-- 添加跳转链接 --><p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>]]></content>
-      
-      
+      <tags>
+        <tag>AI</tag>
+        <tag>开发工具</tag>
+        <tag>Claude</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World 🌟</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<!-- 使用markdown语法增加跳转链接,可以在文章页形成目录 -->
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E5%89%8D%E8%A8%80">1</a></li>
+<li><a href="#%E5%89%8D%E8%A8%802">2</a></li>
+<li><a href="#%E5%89%8D%E8%A8%803">3</a></li>
+</ul>
+<!-- 使用html语法增加跳转链接,可以在文章页形成目录 -->
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#前言">前言</a></h1><p>我写博客的初衷很简单，就是想记录下学习过程中的那些复杂知识点。刚开始，我选择了CSDN和博客园，陆续写了几十篇文章。但这两个平台的用户体验实在让我难以忍受：缓慢的网站速度，丑陋的界面，以及CSDN繁琐的审核流程，都让我逐渐失去了更新的动力。</p>
+<h1 id="前言2"><a href="#前言2" class="headerlink" title="前言2"></a>前言2</h1><p>后来，我尝试了微信公众号。虽然它不支持Markdown，写起来比较麻烦，但为了未来的发展以及可能出现的商业化操作，我决定重新开始。</p>
+<h2 id="前言3"><a href="#前言3" class="headerlink" title="前言3"></a>前言3</h2><p>我的博客之路，其实是分享知识和连接世界的旅程。</p>
+<p>当初写博客的初衷有两个：</p>
+<p>记录知识: 我想把学到的知识整理成文章，方便自己日后翻阅回顾。然而，现实情况是，我很少回头去看以前写的文章。<br>分享经验: 我希望能够帮助更多的人，把我的知识和经验分享出去。写博客让我结识了来自各地的朋友，无论是学生、职场老手，还是初高中生，都在学习编程。我觉得这是一个扩展人脉，与大家交流学习的好机会。<br>“不以盈利为目的的博客最后都死亡了”，这句话一直萦绕在我的脑海里。<br>虽然我并不排斥从博客中获得收益，但我不会为了吸引粉丝而改变初衷，去写一些迎合大众的文章。我希望我的博客能保持初心，记录生活，分享经验，并与志同道合的人一起成长。</p>
+<p>运营和维护博客需要多少时间和金钱？</p>
+<p>这个问题没有标准答案，取决于你对博客的投入和目标。我计划持续更新我的博客，把它当作记录生活和工作的一种方式。至于具体需要投入多少时间和金钱，还需要观察和实践。</p>
+<p>最后，我想说，写博客是一段充满挑战和乐趣的旅程。 坚持下去，你就能收获更多知识、朋友和成长。</p>
+<p>欢迎关注我的博客，期待与你一起探索编程的世界！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<!-- Markdown语法 添加图片: ![图片alt](图片链接 "图片title") -->
+<p><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯"></p>
+<!-- Markdown语法 添加链接图片: 给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。-->
+<p><a href="https://www.baidu.com/"><img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="pEwhete.jpg"></a></p>
+<!-- HTML语法 添加图片: <img src="图片链接" alt="图片alt" title="图片title">    `class="no-lightbox"`:不想为某张图片添加大图查看模式 -->
+<img src="https://s21.ax1x.com/2025/03/20/pEwhete.jpg" alt="这是金克斯角色" title="金克斯" class="no-lightbox">
+
+<!-- 添加跳转链接 -->
+<p><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a></p>
+]]></content>
       <categories>
-          
-          <category> 博客 </category>
-          
+        <category>博客</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 博客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
